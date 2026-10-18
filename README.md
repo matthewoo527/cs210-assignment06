@@ -609,7 +609,7 @@ int main() {
     return 0;
 }
 ```
-## Output
+## Output/Test Cases
 ### Successful login, unknown user, removal, and rehash
 ```
 alice inserted at bucket 0
@@ -789,6 +789,6 @@ It is also easier to insert and remove users compared to other methods.
 
 **Load Factor:** Load factor is the number of users divided by the number of buckets.
 
-**Expected Lookup Complexity:** The expected lookup time is O(1) with a good hash distribution and a controlled load factor. In the worst case, it can be O(n) when many users collide.
+**Expected Lookup Complexity:** The expected lookup time is O(1) because it lookup the user index and goes there directly. In the worst case, it is O(n) when many users have the same index in the linked list.
 
 **Password Security:** The demoHash() is not for real password security because it is too fast and it is easy guessing for some computer. We should use secure password-hashing algorithms like Argon2 for real password security.
