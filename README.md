@@ -775,3 +775,20 @@ Find Erin: 1
 Remove Alice: 1
 David still found: 1
 ```
+
+## Choice of the best mitigation strategy after implementing all of them
+
+I chose chaining because it is easy to implement using linked lists. 
+It is also easier to insert and remove users compared to other methods.
+
+## Explain collisions, chaining, load factor, expected lookup complexity, and why a classroom hash is not a production password-hashing scheme.
+ 
+**Collisions:** When two users produce the same index, it is a collision.
+
+**Chaining:** It stores two users in the same index when a collision happens.
+
+**Load Factor:** Load factor is the number of users divided by the number of buckets.
+
+**Expected Lookup Complexity:** The expected lookup time is O(1) with a good hash distribution and a controlled load factor. In the worst case, it can be O(n) when many users collide.
+
+**Password Security:** The demoHash() is not for real password security because it is too fast and it is easy guessing for some computer. We should use secure password-hashing algorithms like Argon2 for real password security.
