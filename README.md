@@ -609,3 +609,169 @@ int main() {
     return 0;
 }
 ```
+## Output
+### Successful login, unknown user, removal, and rehash
+```
+alice inserted at bucket 0
+bob inserted at bucket 2
+carol inserted at bucket 4
+david inserted at bucket 0
+Table resized from 5 to 11
+erin inserted at bucket 1
+
+Total load factor: 0.454545
+
+Testing Rehash:
+Load factor: 0.454545
+Bob found after rehash!
+
+===== LOGIN SYSTEM =====
+Enter username: alice
+Enter password: alice123
+Login successful!
+
+Removing Alice...
+Alice removed successfully!
+
+Try logging in again:
+Enter username: alice   
+Enter password: alice123
+Unknown user!
+
+===== LINEAR PROBING =====
+alice inserted at bucket 0
+erin inserted at bucket 1
+bob inserted at bucket 2
+david inserted at bucket 3
+Table resized from 5 to 11
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+Erin still found: 1
+Remove unknown user: 0
+
+===== QUADRATIC PROBING =====
+alice inserted at bucket 0
+erin inserted at bucket 1
+Table resized from 5 to 11
+david inserted at bucket 3
+bob inserted at bucket 10
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Bob: 1
+Remove Alice: 1
+Erin still found: 1
+
+===== DOUBLE HASHING =====
+alice inserted at bucket 0
+erin inserted at bucket 3
+bob inserted at bucket 2
+david inserted at bucket 1
+Table resized from 5 to 11
+carol inserted at bucket 0
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+David still found: 1
+```
+
+### Failed password, unknown user, removal, and rehash
+```
+david inserted at bucket 3
+Table resized from 5 to 11
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+Erin still found: 1
+Remove unknown user: 0
+
+===== QUADRATIC PROBING =====
+alice inserted at bucket 0
+erin inserted at bucket 1
+Table resized from 5 to 11
+david inserted at bucket 3
+bob inserted at bucket 10
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Bob: 1
+Remove Alice: 1
+Erin still found: 1
+
+===== DOUBLE HASHING =====
+alice inserted at bucket 0
+erin inserted at bucket 3
+bob inserted at bucket 2
+david inserted at bucket 1
+Table resized from 5 to 11
+carol inserted at bucket 0
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+David still found: 1
+matthewoo@Matthews-MacBook-Pro Downloads % clear
+matthewoo@Matthews-MacBook-Pro Downloads % /Users/matthewoo/Downloads/Woo_Matthew_Assignment6
+alice inserted at bucket 0
+bob inserted at bucket 2
+carol inserted at bucket 4
+david inserted at bucket 0
+Table resized from 5 to 11
+erin inserted at bucket 1
+
+Total load factor: 0.454545
+
+Testing Rehash:
+Load factor: 0.454545
+Bob found after rehash!
+
+===== LOGIN SYSTEM =====
+Enter username: david
+Enter password: apple123
+Wrong password!
+
+Removing Alice...
+Alice removed successfully!
+
+Try logging in again:
+Enter username: alice
+Enter password: alice123
+Unknown user!
+
+===== LINEAR PROBING =====
+alice inserted at bucket 0
+erin inserted at bucket 1
+bob inserted at bucket 2
+david inserted at bucket 3
+Table resized from 5 to 11
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+Erin still found: 1
+Remove unknown user: 0
+
+===== QUADRATIC PROBING =====
+alice inserted at bucket 0
+erin inserted at bucket 1
+Table resized from 5 to 11
+david inserted at bucket 3
+bob inserted at bucket 10
+carol inserted at bucket 2
+Load factor: 0.454545
+Find Bob: 1
+Remove Alice: 1
+Erin still found: 1
+
+===== DOUBLE HASHING =====
+alice inserted at bucket 0
+erin inserted at bucket 3
+bob inserted at bucket 2
+david inserted at bucket 1
+Table resized from 5 to 11
+carol inserted at bucket 0
+Load factor: 0.454545
+Find Erin: 1
+Remove Alice: 1
+David still found: 1
+```
